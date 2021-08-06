@@ -13,7 +13,10 @@
         <activity
             android:name=".RegisterUserScreen"
             android:exported="true"
-           />
+            android:windowSoftInputMode="adjustPan"
+            android:usesCleartextTraffic="true"
+
+            />
 
         <activity
             android:name=".MainActivity"

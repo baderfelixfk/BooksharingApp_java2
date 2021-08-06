@@ -3,8 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="740dp"
     android:background="@drawable/pic_background_wood2"
+    android:isScrollContainer="false"
     tools:context=".MainActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -34,9 +35,9 @@
         android:fontFamily="sans-serif-black"
         android:text="BookSharingApp V1.1"
         android:textAlignment="center"
+        android:textColor="#D4AC0C"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:textColor="#D4AC0C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
