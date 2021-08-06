@@ -36,16 +36,17 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
 
-
+        // Get the firebase instance
         mAuth = FirebaseAuth.getInstance();
 
 
-
-
+        // FInd the items and allocate a variable
+        // Set click listener to the button and the banner
         banner = (TextView) findViewById(R.id.txt_MainAppName2);
         banner.setOnClickListener(this);
         btn_registeruser = (Button) findViewById(R.id.btn_register);
         btn_registeruser.setOnClickListener(this);
+        // Do for the rest
         et_Name = (EditText)  findViewById(R.id.etxt_FullNameRegister);
         et_Age = (EditText)  findViewById(R.id.etxt_AgeRegister);
         et_Email = (EditText)  findViewById(R.id.etxt_emailAddressRegister);
@@ -58,15 +59,19 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
     public void onClick(View view) {
         switch (view.getId())
         {
+            // A click has happend, but on which one?
             case R.id.txt_MainAppName2:
+                // Here, switch back to the MainAcitiviyScreen
                 startActivity(new Intent(this,MainActivity.class));
                 break;
             case R.id.btn_register:
+                // Otherwise call the registerUser function and register a user
                 registerUser();
                 break;
         }
     }
 
+    // This function checks if a string is a numeric, true or false
     public static boolean isNumeric(String str) {
         try {
             Double.parseDouble(str);
@@ -76,6 +81,7 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
         }
     }
 
+    // This function checks for a valid email address, true or false
     public boolean isValidEmailAddress(String email) {
         String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
         java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
@@ -84,14 +90,16 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
     }
 
 
-
+    // This functions registers a new user
     public void registerUser()
     {
+        // Get the text out of the fields
         String email = et_Email.getText().toString().trim();
         String password = et_password.getText().toString().trim();
         String age = et_Age.getText().toString().trim();
         String name = et_Name.getText().toString().trim();
 
+        // Do some basic checks for the inputs
         if(name.isEmpty())
         {
             et_Name.setError("Name required");
@@ -128,15 +136,7 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
             et_Email.requestFocus();
             return;
         }
-        // Check for valid email
-//        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
-//        if(!email.matches(emailPattern))
-//        {
-//            et_Email.setError("Please enter valid email");
-//            et_Email.requestFocus();
-//            return;
-//
-//        }
+
         // Check for password a bit
         if(password.length() < 6)
         {
@@ -145,7 +145,8 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
             return;
         }
 
-
+        // If everything was successful,
+        // Create a new user in firebase, this code is copied from the instructions
             mAuth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
