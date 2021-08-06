@@ -26,6 +26,7 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
     private EditText et_Name, et_Age, et_Email, et_password;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +53,7 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
 
     }
 
+
     @Override
     public void onClick(View view) {
         switch (view.getId())
@@ -64,6 +66,24 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
                 break;
         }
     }
+
+    public static boolean isNumeric(String str) {
+        try {
+            Double.parseDouble(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
+
+    public boolean isValidEmailAddress(String email) {
+        String ePattern = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$";
+        java.util.regex.Pattern p = java.util.regex.Pattern.compile(ePattern);
+        java.util.regex.Matcher m = p.matcher(email);
+        return m.matches();
+    }
+
+
 
     public void registerUser()
     {
@@ -78,9 +98,15 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
             et_Name.requestFocus();
             return;
         }
-        if(age.isEmpty())
+        if(age.isEmpty() )
         {
             et_Age.setError("Age required");
+            et_Age.requestFocus();
+            return;
+        }
+        if(!isNumeric(age))
+        {
+            et_Age.setError("Please enter a number");
             et_Age.requestFocus();
             return;
         }
@@ -96,9 +122,21 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
             et_Email.requestFocus();
             return;
         }
-
+        if(!isValidEmailAddress(email))
+        {
+            et_Email.setError("Enter valid email");
+            et_Email.requestFocus();
+            return;
+        }
         // Check for valid email
-
+//        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+//        if(!email.matches(emailPattern))
+//        {
+//            et_Email.setError("Please enter valid email");
+//            et_Email.requestFocus();
+//            return;
+//
+//        }
         // Check for password a bit
         if(password.length() < 6)
         {
@@ -126,6 +164,7 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
                                             Toast.makeText(RegisterUserScreen.this, "User han been registrated", Toast.LENGTH_LONG).show();
                                         } else {
                                             Toast.makeText(RegisterUserScreen.this, "User registration failed", Toast.LENGTH_LONG).show();
+
                                         }
                                     }
                                 });
