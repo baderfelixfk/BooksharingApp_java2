@@ -11,6 +11,5 @@ public class RegisterUserScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user_screen);
 
-
     }
 }
