@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
 
-        register = (TextView) findViewById(R.id.txt_reigsterMain);
+        register = (TextView) findViewById(R.id.txt_registerMain);
         register.setOnClickListener(this);
 
 
@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (view.getId())
         {
-            case R.id.txt_reigsterMain:
+            case R.id.txt_registerMain:
                 startActivity(new Intent(this,RegisterUserScreen.class));
                 break;
 
