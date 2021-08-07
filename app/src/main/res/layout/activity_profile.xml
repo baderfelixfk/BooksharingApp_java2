@@ -4,15 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileActivity">
+    tools:context=".ProfileActivity"
+    android:background="@drawable/pic_background_wood2">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_welcometext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="48dp"
         android:text="HelloTo YOur Account"
+        android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginBottom="203dp"
+        android:background="@drawable/btn_rounded_corners"
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:backgroundTint="@color/orange_felix"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_emailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="124dp"
+        android:text="Email Address"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_outEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="11dp"
+        android:text=""
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_emailAddress" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="44dp"
+        android:text="Name"
+        android:textSize="25dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_outEmailAddress" />
+
+    <TextView
+        android:id="@+id/tv_outName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="13dp"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+    <TextView
+        android:id="@+id/tv_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="37dp"
+        android:text="Age"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_outName" />
+
+    <TextView
+        android:id="@+id/tv_outAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="11dp"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_age" />
 </androidx.constraintlayout.widget.ConstraintLayout>
