@@ -32,8 +32,10 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user_screen);
 
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
+
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+
 
 
         // Get the firebase instance
@@ -74,6 +76,7 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
                 // Otherwise call the registerUser function and register a user
                 registerUser();
                 break;
+
         }
     }
 

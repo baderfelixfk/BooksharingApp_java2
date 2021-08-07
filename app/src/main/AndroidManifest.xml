@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BooksharingApp_java">
         <activity
+            android:name=".ResetPassword"
+            android:exported="true" />
+        <activity
             android:name=".ProfileActivity"
             android:exported="true" />
         <activity
@@ -20,7 +23,7 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

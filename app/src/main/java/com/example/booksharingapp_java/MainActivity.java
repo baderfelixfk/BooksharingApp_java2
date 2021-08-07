@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private TextView textViewRegister;
+    private TextView textViewRegister, resetPassword;
     private Button buttonSignin;
     private EditText editTextEmail, editTextPassword;
 
@@ -35,15 +35,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textViewRegister = (TextView) findViewById(R.id.txt_registerMain);
         textViewRegister.setOnClickListener(this);
 
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
         //THis is a little workaround to re initialize the keyboard for the correct background
-        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+        getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
 
         buttonSignin  = (Button) findViewById(R.id.btn_login);
         buttonSignin.setOnClickListener(this);
 
         editTextEmail = (EditText) findViewById(R.id.etxt_EmailAddress);
         editTextPassword = (EditText)  findViewById(R.id.etxt_Password);
+
+        resetPassword = (TextView) findViewById(R.id.txt_forgotpasswordMain);
+        resetPassword.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -75,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn_login:
                 userLogin();
+                break;
+            case R.id.txt_forgotpasswordMain:
+                startActivity(new Intent(this, ResetPassword.class));
                 break;
 
         }

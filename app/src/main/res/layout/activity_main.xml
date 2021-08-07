@@ -8,6 +8,8 @@
     android:isScrollContainer="false"
     tools:context=".MainActivity">
 
+
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/pic_bookone"
         android:layout_width="150dp"
@@ -139,5 +141,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txt_forgotpasswordMain"
         app:layout_constraintTop_toTopOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

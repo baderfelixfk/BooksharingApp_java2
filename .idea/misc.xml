@@ -8,7 +8,8 @@
         <entry key="..\:/Users/Felix/AndroidStudioProjects/BooksharingApp_java/app/src/main/res/drawable/custom_button.xml" value="0.5703125" />
         <entry key="..\:/Users/Felix/AndroidStudioProjects/BooksharingApp_java/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Felix/AndroidStudioProjects/BooksharingApp_java/app/src/main/res/layout/activity_profile.xml" value="0.5" />
-        <entry key="..\:/Users/Felix/AndroidStudioProjects/BooksharingApp_java/app/src/main/res/layout/activity_register_user_screen.xml" value="0.33" />
+        <entry key="..\:/Users/Felix/AndroidStudioProjects/BooksharingApp_java/app/src/main/res/layout/activity_register_user_screen.xml" value="0.25" />
+        <entry key="..\:/Users/Felix/AndroidStudioProjects/BooksharingApp_java/app/src/main/res/layout/activity_reset_password.xml" value="0.5401041666666667" />
       </map>
     </option>
   </component>
