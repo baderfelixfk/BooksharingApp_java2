@@ -18,6 +18,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+//TODO: Make Layout relative, edit activity main
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textViewRegister, resetPassword;

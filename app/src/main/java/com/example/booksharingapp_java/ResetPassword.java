@@ -15,6 +15,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 
+//TODO: Make Layout relative, edit reset password xml
+
 public class ResetPassword extends AppCompatActivity implements View.OnClickListener {
 
 
