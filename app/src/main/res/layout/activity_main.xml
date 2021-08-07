@@ -99,16 +99,16 @@
         android:layout_marginStart="30dp"
         android:layout_marginTop="550dp"
         android:layout_marginEnd="30dp"
-
-        style="@style/style_btn"
-
-        android:text="Login"
-        android:textAlignment="center"
-        android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Login"
+        android:background="@drawable/btn_rounded_corners"
+        app:backgroundTint="@color/orange_felix"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        />
 
     <TextView
         android:id="@+id/txt_forgotpasswordMain"

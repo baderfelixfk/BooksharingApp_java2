@@ -19,7 +19,7 @@
         android:backgroundTint="#D4AC0C"
         android:text="Register "
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="#FFFFFF"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
