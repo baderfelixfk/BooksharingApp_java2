@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editTextEmail = (EditText) findViewById(R.id.etxt_EmailAddress);
         editTextPassword = (EditText)  findViewById(R.id.etxt_Password);
 
+        mAuth = FirebaseAuth.getInstance();
+
     }
 
     // This function checks for a valid email address, true or false
@@ -115,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                 if(task.isSuccessful())
                 {
-                    // redirect to user prfilel
+                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                 }
                 else
                 {
