@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Felix/AndroidStudioProjects/BooksharingApp_java/app/src/main/res/drawable/custom_button.xml" value="0.5703125" />
         <entry key="..\:/Users/Felix/AndroidStudioProjects/BooksharingApp_java/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/Felix/AndroidStudioProjects/BooksharingApp_java/app/src/main/res/layout/activity_register_user_screen.xml" value="0.33" />
       </map>
