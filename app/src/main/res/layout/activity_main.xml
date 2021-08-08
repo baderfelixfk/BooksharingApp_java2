@@ -37,7 +37,7 @@
         android:fontFamily="sans-serif-black"
         android:text="BookSharingApp V1.1"
         android:textAlignment="center"
-        android:textColor="#D4AC0C"
+        android:textColor="@color/orange_felix"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,11 +105,10 @@
         app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Login"
-        android:background="@drawable/btn_rounded_corners"
-        app:backgroundTint="@color/orange_felix"
-        android:textColor="@color/black"
         android:textSize="25dp"
+        android:text="Login"
+        style = "@style/Widget.AppCompat.Button.Colored"
+        android:textColor="#000000"
         />
 
     <TextView
@@ -141,7 +140,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/txt_forgotpasswordMain"
         app:layout_constraintTop_toTopOf="parent" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
