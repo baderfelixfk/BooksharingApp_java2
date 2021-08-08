@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId())
         {
             case R.id.txt_registerMain:
-                startActivity(new Intent(this,BookListActivity.class));
+                startActivity(new Intent(this,RegisterUserScreen.class));
                 break;
             case R.id.btn_login:
                 userLogin();

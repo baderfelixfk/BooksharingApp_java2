@@ -7,6 +7,19 @@
     tools:context=".ProfileActivity"
     android:background="@drawable/pic_background_wood2">
 
+    <Button
+        android:id="@+id/btn_gotobokks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginBottom="260dp"
+        android:text="Go to Books"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:backgroundTint="@color/beige"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
     <TextView
         android:id="@+id/tv_welcometext"
         android:layout_width="wrap_content"
@@ -22,8 +35,8 @@
         android:id="@+id/btn_logout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="144dp"
-        android:layout_marginBottom="203dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginBottom="92dp"
         android:text="Logout"
         android:textColor="@color/black"
         android:textSize="25dp"
@@ -60,10 +73,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="4dp"
         android:text="Name"
-        android:textSize="25dp"
         android:textColor="#FFFFFF"
+        android:textSize="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_outEmailAddress" />
 
@@ -84,7 +97,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="8dp"
         android:text="Age"
         android:textColor="#FFFFFF"
         android:textSize="25dp"

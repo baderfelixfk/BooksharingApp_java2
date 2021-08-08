@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private Button buttonLogout;
+    private Button buttonLogout, buttonBooks;
 
 
     private FirebaseUser user;
@@ -32,6 +32,14 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        buttonBooks = (Button) findViewById(R.id.btn_gotobokks);
+        buttonBooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileActivity.this,BookListActivity.class));
+            }
+        });
 
         buttonLogout = (Button) findViewById(R.id.btn_logout);
         buttonLogout.setOnClickListener(new View.OnClickListener()
@@ -65,7 +73,8 @@ public class ProfileActivity extends AppCompatActivity {
                     String age = userProfile.age;
                     String email = userProfile.email;
 
-                    textViewWelcomeText.setText("Welcome: "+ name +"!");
+                    textViewWelcomeText.setText("Welcome "+ name +"!");
+                    textViewWelcomeText.setTextSize(1,25);
                     textViewAge.setText(age);
                     textViewEmail.setText(email);
                     textViewname.setText(name);
