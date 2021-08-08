@@ -8,8 +8,6 @@
     android:isScrollContainer="false"
     tools:context=".MainActivity">
 
-
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/pic_bookone"
         android:layout_width="150dp"
