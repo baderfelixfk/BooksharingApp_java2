@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 //TODO: Make Layout relative, edit activity main
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginScreen extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textViewRegister, resetPassword;
     private Button buttonSignin;
@@ -31,10 +31,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login_screen);
 
 
-        textViewRegister = (TextView) findViewById(R.id.txt_registerMain);
+        textViewRegister = (TextView) findViewById(R.id.txt_signUp);
         textViewRegister.setOnClickListener(this);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
@@ -44,10 +44,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonSignin  = (Button) findViewById(R.id.btn_login);
         buttonSignin.setOnClickListener(this);
 
-        editTextEmail = (EditText) findViewById(R.id.etxt_EmailAddress);
-        editTextPassword = (EditText)  findViewById(R.id.etxt_Password);
+        editTextEmail = (EditText) findViewById(R.id.etxt_emailAddress);
+        editTextPassword = (EditText)  findViewById(R.id.etxt_password);
 
-        resetPassword = (TextView) findViewById(R.id.txt_forgotpasswordMain);
+        resetPassword = (TextView) findViewById(R.id.txt_forgotpassword);
         resetPassword.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
@@ -75,14 +75,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         switch (view.getId())
         {
-            case R.id.txt_registerMain:
-                startActivity(new Intent(this,RegisterUserScreen.class));
+            case R.id.txt_signUp:
+                startActivity(new Intent(this, SignUpScreen.class));
                 break;
             case R.id.btn_login:
                 userLogin();
                 break;
-            case R.id.txt_forgotpasswordMain:
-                startActivity(new Intent(this, ResetPassword.class));
+            case R.id.txt_forgotpassword:
+                startActivity(new Intent(this, ForgotPasswordScreen.class));
                 break;
 
         }
@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     // Check if email validation ok
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                    startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                    startActivity(new Intent(LoginScreen.this, BookScreenMain.class));
 
                     /*if(user.isEmailVerified())
                     {
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
                 else
                 {
-                    Toast.makeText(MainActivity.this,"Failed to login", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginScreen.this,"Failed to login", Toast.LENGTH_LONG).show();
                 }
             }
         });

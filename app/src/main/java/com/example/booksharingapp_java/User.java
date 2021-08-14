@@ -15,5 +15,9 @@ public class User {
          this.email = email;
 
      }
+     public User(String email)
+     {
+         this.email = email;
+     }
 
 }

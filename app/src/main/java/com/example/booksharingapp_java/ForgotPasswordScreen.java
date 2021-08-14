@@ -17,7 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 //TODO: Make Layout relative, edit reset password xml
 
-public class ResetPassword extends AppCompatActivity implements View.OnClickListener {
+public class ForgotPasswordScreen extends AppCompatActivity implements View.OnClickListener {
 
 
     private EditText editTextEmailPasswordReset;
@@ -36,15 +36,17 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reset_password);
+        setContentView(R.layout.activity_forgotpassword_screen);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
         //THis is a little workaround to re initialize the keyboard for the correct background
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
-        editTextEmailPasswordReset = (EditText) findViewById(R.id.etxt_email_reset);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        buttonResetPassword = (Button) findViewById(R.id.btn_resetpassword_reset);
+        editTextEmailPasswordReset = (EditText) findViewById(R.id.etxt_emailAddress);
+
+        buttonResetPassword = (Button) findViewById(R.id.btn_sendverificiation);
         buttonResetPassword.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
@@ -78,11 +80,11 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
             public void onComplete(@NonNull Task<Void> task) {
                 if(task.isSuccessful())
                 {
-                    Toast.makeText(ResetPassword.this,"Check your email to reset your password.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ForgotPasswordScreen.this,"Check your email to reset your password.", Toast.LENGTH_LONG).show();
                 }
                 else
                 {
-                    Toast.makeText(ResetPassword.this,"Something went wrong. Try again", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ForgotPasswordScreen.this,"Something went wrong. Try again", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -94,8 +96,8 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
 
-            case R.id.txt_MainAppName2:
-                startActivity(new Intent(ResetPassword.this, MainActivity.class));
+            case R.id.txt_forgotpasswordText:
+                startActivity(new Intent(ForgotPasswordScreen.this, LoginScreen.class));
         }
 
     }

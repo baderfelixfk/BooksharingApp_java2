@@ -18,7 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegisterUserScreen extends AppCompatActivity implements View.OnClickListener {
+public class SignUpScreen extends AppCompatActivity implements View.OnClickListener {
 
     private FirebaseAuth mAuth;
 
@@ -30,9 +30,9 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_user_screen);
+        setContentView(R.layout.activity_signup_screen);
 
-
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN|WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
 
@@ -44,15 +44,14 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
 
         // FInd the items and allocate a variable
         // Set click listener to the button and the banner
-        banner = (TextView) findViewById(R.id.txt_MainAppName2);
+        banner = (TextView) findViewById(R.id.txt_singupText);
         banner.setOnClickListener(this);
-        btn_registeruser = (Button) findViewById(R.id.btn_register);
+        btn_registeruser = (Button) findViewById(R.id.btn_signup);
         btn_registeruser.setOnClickListener(this);
         // Do for the rest
-        et_Name = (EditText)  findViewById(R.id.etxt_FullNameRegister);
-        et_Age = (EditText)  findViewById(R.id.etxt_AgeRegister);
-        et_Email = (EditText)  findViewById(R.id.etxt_emailAddressRegister);
-        et_password = (EditText)  findViewById(R.id.etxt_passwordRegister);
+        //et_Name = (EditText)  findViewById(R.id.etxt_FullNameRegister);
+        et_Email = (EditText)  findViewById(R.id.etxt_emailAddress);
+        et_password = (EditText)  findViewById(R.id.etxt_password);
 
     }
 
@@ -68,11 +67,11 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
         switch (view.getId())
         {
             // A click has happend, but on which one?
-            case R.id.txt_MainAppName2:
+            case R.id.txt_signUp:
                 // Here, switch back to the MainAcitiviyScreen
-                startActivity(new Intent(this,MainActivity.class));
+                startActivity(new Intent(this, LoginScreen.class));
                 break;
-            case R.id.btn_register:
+            case R.id.btn_signup:
                 // Otherwise call the registerUser function and register a user
                 registerUser();
                 break;
@@ -99,28 +98,28 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
         // Get the text out of the fields
         String email = et_Email.getText().toString().trim();
         String password = et_password.getText().toString().trim();
-        String age = et_Age.getText().toString().trim();
-        String name = et_Name.getText().toString().trim();
+        //String age = et_Age.getText().toString().trim();
+        //String name = et_Name.getText().toString().trim();
 
         // Do some basic checks for the inputs
-        if(name.isEmpty())
-        {
-            et_Name.setError("Name required");
-            et_Name.requestFocus();
-            return;
-        }
-        if(age.isEmpty() )
-        {
-            et_Age.setError("Age required");
-            et_Age.requestFocus();
-            return;
-        }
-        if(!isNumeric(age))
-        {
-            et_Age.setError("Please enter a number");
-            et_Age.requestFocus();
-            return;
-        }
+//        if(name.isEmpty())
+//        {
+//            et_Name.setError("Name required");
+//            et_Name.requestFocus();
+//            return;
+//        }
+//        if(age.isEmpty() )
+//        {
+//            et_Age.setError("Age required");
+//            et_Age.requestFocus();
+//            return;
+//        }
+//        if(!isNumeric(age))
+//        {
+//            et_Age.setError("Please enter a number");
+//            et_Age.requestFocus();
+//            return;
+//        }
         if(password.isEmpty())
         {
             et_password.setError("Password required");
@@ -156,7 +155,7 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
                         public void onComplete(@NonNull Task<AuthResult> task) {
 
                             if (task.isSuccessful()) {
-                                User user = new User(name, age, email);
+                                User user = new User(email);
 
                                 FirebaseDatabase.getInstance().getReference("users")
                                         .child((FirebaseAuth.getInstance().getCurrentUser().getUid()))
@@ -165,9 +164,9 @@ public class RegisterUserScreen extends AppCompatActivity implements View.OnClic
                                     public void onComplete(@NonNull Task<Void> task) {
 
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(RegisterUserScreen.this, "User han been registrated", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(SignUpScreen.this, "User han been registrated", Toast.LENGTH_LONG).show();
                                         } else {
-                                            Toast.makeText(RegisterUserScreen.this, "User registration failed", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(SignUpScreen.this, "User registration failed", Toast.LENGTH_LONG).show();
 
                                         }
                                     }

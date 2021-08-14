@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class ProfileActivity extends AppCompatActivity {
+public class ProfileScreen extends AppCompatActivity {
 
     private Button buttonLogout, buttonBooks;
 
@@ -37,7 +37,7 @@ public class ProfileActivity extends AppCompatActivity {
         buttonBooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(ProfileActivity.this,BookListActivity.class));
+                startActivity(new Intent(ProfileScreen.this,BookListActivity.class));
             }
         });
 
@@ -48,7 +48,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
 
-                startActivity(new Intent(ProfileActivity.this,MainActivity.class));
+                startActivity(new Intent(ProfileScreen.this, LoginScreen.class));
             }
         });
 
@@ -84,7 +84,7 @@ public class ProfileActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(ProfileActivity.this,"Something went wrong", Toast.LENGTH_LONG).show();
+                Toast.makeText(ProfileScreen.this,"Something went wrong", Toast.LENGTH_LONG).show();
             }
         });
 

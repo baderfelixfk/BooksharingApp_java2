@@ -13,22 +13,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BooksharingApp_java">
         <activity
+            android:name=".AddBookScreen"
+            android:exported="true" />
+        <activity
+            android:name=".BookScreenMain"
+            android:exported="true" />
+        <activity
+            android:name=".test2"
+            android:exported="true"
+            android:label="@string/title_activity_test2" />
+        <activity
+            android:name=".ok"
+            android:exported="true"
+            android:label="@string/title_activity_ok" />
+        <activity
             android:name=".BookDetailActivity"
             android:exported="true" />
-        <activity android:name=".BookListActivity"></activity>
+        <activity android:name=".BookListActivity" />
         <activity
-            android:name=".ResetPassword"
-            android:exported="true" />
-        <activity
-            android:name=".ProfileActivity"
-            android:exported="true" />
-        <activity
-            android:name=".RegisterUserScreen"
+            android:name=".ForgotPasswordScreen"
             android:exported="true"
+            android:parentActivityName=".LoginScreen" />
+        <activity
+            android:name=".ProfileScreen"
+            android:exported="true" />
+        <activity
+            android:name=".SignUpScreen"
+            android:exported="true"
+            android:parentActivityName=".LoginScreen"
             android:usesCleartextTraffic="true"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginScreen"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -37,6 +53,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
